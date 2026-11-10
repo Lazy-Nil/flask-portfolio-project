@@ -23,16 +23,22 @@
     </header>
     
     <main>
-        <section id="home">
-            <div class="home-content">
-                <img src="images/profile.jpg" class = "profile-image" alt="profile image">
+        <section id="home" class ="hero" >
+            <div class="hero-text">
                 <h2>Hi! I am a Python Developer</h2>
+                <p>Welcome to my dummy portfolio . I am Learning Web Development with Python. This is presumably the first flask project I am building.The Technologies I have used in this project are HTML, CSS , JINJA2 and FLASK. Idk much. Peace.</p>
+
+                <div class="hero-actions">
+                    <a href="#projects" class="btn"> Explore my Projects ↗</a> 
+                    <a href="#education" class="btn"> View My Education ↗</a>    
+                </div>
             </div>
             
-            <p>Welcome to my dummy portfolio . This is presumably the first flask project I am building. Idk much. Peace.</p>
-
-            <a href="#projects" class="btn"> Explore my Projects ↗</a> 
-            <a href="#education" class="btn"> View My Education ↗</a>
+            
+            <div class="hero-image">
+                <img src="images/profile.jpg" class = "profile-image" alt="my-profile image">
+            </div>
+            
         </section>
         
         <section id="about">
@@ -61,14 +67,16 @@
         
         <section id="projects">
             <h2>My Projects </h2> 
-            <a href="https://github.com" target ="_blank" rel = "noopener noreferrer">Visit My Github ↗ </a>
-            <article>
-                <h3>Project 1</h3>
-                <p>Description about the project</p>
+            <a href="https://github.com" target ="_blank" rel = "noopener noreferrer" class="github-btn">Visit My Github ↗ </a>
+            <article class = "project-card">
+                <h3>Expression Interpreter</h3>
+                <p>A simple expression interpreter implemented in Python.</p>
+                <a href="#" class="btn">View Project</a>
             </article>
-            <article>
-                <h3>Project 2</h3>
-                <p>Description about the project</p>
+            <article class = "project-card">
+                <h3>Simple Calculator</h3>
+                <p>A basic calculator implemented in Python.</p>
+                <a href="#" class="btn">View Project</a>
             </article>
         </section>
 
@@ -84,3 +92,4 @@
     </footer>
 </body>
 </html>
+

@@ -13,6 +13,9 @@ body {
 
 /* Style the nav bar */
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px 40px;
     background-color: white;
     border-bottom: 1px solid #e5e5e5;
@@ -22,11 +25,17 @@ header h1 {
     font-size: 24px;
     margin: 0;
 }
+nav {
+    display: flex;
+    gap: 24px;
+}
 nav a {
     color: #555555;
     text-decoration: none;
-    margin-right: 20px;
     font-size: 14px;
+}
+nav a:hover {
+    color: #20034f;
 }
 
 /* headings and paras */
@@ -53,6 +62,9 @@ p {
 /* sections and pfp */
 main {
     padding: 30px 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 section {
@@ -76,11 +88,59 @@ section {
     padding: 12px 22px;
     border-radius: 4px;
     font-size: 14px;
+    
 }
 .btn:hover {
-    background-color: #444444;
+    background-color: #0f068a;
 }
 
-#projects a:hover{
-    color:#2f0ec351
+.github-btn:hover {
+    color:#2f0ec3c8
 }
+
+.project-card {
+    background-color: white;
+    padding: 24px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-width: 600px;
+}
+
+/* hero section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 48px;
+    padding: 60px 0;
+}
+
+.hero-text {
+    flex: 1;
+    /* min-width: 0; */
+}
+
+.hero-image {
+    flex: 0 0 220px;
+}
+
+.hero-text h2 {
+    font-size: 42px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    max-width: 550px;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+}
+
