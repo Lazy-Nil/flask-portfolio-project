@@ -1,3 +1,51 @@
+/* design tokens */
+:root {
+
+    /* Colors */
+    --primary-color: #20034f;
+    --primary-hover: #0f068a;
+
+    --background-color: #f8f7f4;
+    --surface-color: #ffffff;
+
+    --text-color: #222222;
+    --muted-text-color: #555555;
+
+    --border-color: #e5e5e5;
+
+
+    /* Typography */
+    --font-family: Arial, sans-serif;
+
+    --font-size-small: 14px;
+    --font-size-normal: 16px;
+    --font-size-large: 24px;
+
+
+    /* Spacing */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 32px;
+    --spacing-xl: 48px;
+
+
+    /* Border radius */
+    --radius-small: 4px;
+    --radius-medium: 8px;
+    --radius-large: 16px;
+
+
+    /* Shadows */
+    --card-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+
+    /* Transitions */
+    --transition-fast: 0.25s ease;
+    --transition-normal: 0.3s ease;
+}
+
+
 /* set the global styles */
 * {
     box-sizing: border-box;
@@ -6,9 +54,9 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f8f7f4;
-    color: #222222;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 
@@ -20,16 +68,16 @@ header {
     flex-direction: column;
     align-items: center;
     padding: 16px 20px;
-    gap: 16px;
-    background-color: white;
-    border-bottom: 1px solid #e5e5e5;
+    gap: var(--spacing-sm);
+    background-color: var(--surface-color);
+    border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 1000;
 
 }
 header h1 {
-    font-size: 24px;
+    font-size: var(--font-size-large);
     margin: 0;
 }
 nav {
@@ -39,13 +87,13 @@ nav {
     gap: 12px 18px;
 }
 nav a {
-    color: #555555;
+    color: var(--text-color);
     position: relative;
     text-decoration: none;
-    font-size: 14px;
+    font-size: var(--font-size-small);
 }
 nav a:hover {
-    color: #20034f;
+    color: var(--primary-color);
 }
 nav a::after {
     content: "";
@@ -54,11 +102,11 @@ nav a::after {
     bottom: -5px;
     width: 100%;
     height: 2px;
-    background-color: #20034f;
+    background-color: var(--primary-color);
 
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 0.25s ease;
+    transition: transform var(--transition-fast);
 }
 
 nav a:hover::after, nav a:focus-visible::after {
@@ -72,30 +120,30 @@ h1 {
 
 h2 {
     font-size: 28px;
-    color: #222222;
+    color: var(--text-color);
     margin-bottom: 15px;
 }
 
 p {
-    font-size: 16px;
+    font-size: var(--font-size-normal);
     line-height: 1.7;
-    color: #555555;
+    color: var(--muted-text-color);
 }
 
 #about p {
-    color: rgba(0, 0, 0, 0.537);
+    color: var(--muted-text-color);
 }
 
 /* sections and pfp */
 main {
-    padding: 24px 20px;
+    padding: var(--spacing-md) 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 
 section {
-    margin-bottom: 40px;
+    margin-bottom: var(--spacing-xl);
     scroll-margin-top: 120px;
 }
 
@@ -110,17 +158,17 @@ section {
 /* links and buttons */
 .btn {
     display: inline-block;
-    background-color: #20034f;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--surface-color);
     text-decoration: none;
     padding: 12px 22px;
-    border-radius: 4px;
-    font-size: 14px;
-    transition: background-color 0.25s ease, transform 0.25s ease;
+    border-radius: var(--radius-small);
+    font-size: var(--font-size-small);
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
     
 }
 .btn:hover {
-    background-color: #0f068a;
+    background-color: var(--primary-hover);
     transform: translateY(-3px);
     
 }
@@ -164,7 +212,7 @@ a:focus-visible, button:focus-visible {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
+    gap: var(--spacing-lg);
     padding: 40px 0;
 }
 
@@ -193,9 +241,9 @@ a:focus-visible, button:focus-visible {
 .hero-actions {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: var(--spacing-md);
     flex-wrap: wrap;
-    margin-top: 24px;
+    margin-top: var(--spacing-md);
     justify-content: center;
 }
 
@@ -209,16 +257,16 @@ a:focus-visible, button:focus-visible {
 }
 
 .project-card {
-    background-color: white;
-    padding: 24px;
-    border: 1px solid #e5e5e5;
-    border-radius: 8px;
+    background-color: var(--surface-color);
+    padding: var(--spacing-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-medium);
     width: 100%;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 .project-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--card-shadow);
 }
 
 
@@ -247,7 +295,7 @@ a:focus-visible, button:focus-visible {
     }
 
     nav {
-        gap: 24px;
+        gap: var(--spacing-md);
     }
 
     /* main section */
@@ -262,7 +310,7 @@ a:focus-visible, button:focus-visible {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        gap: 48px;
+        gap: var(--spacing-xl);
         padding: 60px 0;
     }
 
@@ -286,7 +334,7 @@ a:focus-visible, button:focus-visible {
             auto-fit,
             minmax(350px, 1fr)
         );
-        gap: 24px;
+        gap: var(--spacing-md);
     }
 
 }
